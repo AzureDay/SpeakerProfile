@@ -45,5 +45,8 @@ export class SpeakerNotes {
 }
 
 export class SpeakerTravel {
-
+	travel: string;
+	arrival: string;
+	departure: string;
+	accommodation: string;
 }
