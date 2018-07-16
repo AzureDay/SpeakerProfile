@@ -1,0 +1,17 @@
+<mat-card>
+	<mat-card-header>
+		<h3>Social</h3>
+	</mat-card-header>
+
+	<mat-card-content>
+		<div *ngFor="let social of speakerSocial">
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="social.link" type="text" placeholder="Link">
+			</mat-form-field>
+		</div>
+	</mat-card-content>
+
+	<mat-card-actions>
+		<button mat-raised-button (click)="addSocial()">Add</button>
+	</mat-card-actions>
+</mat-card>

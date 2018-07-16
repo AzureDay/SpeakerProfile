@@ -11,6 +11,7 @@ import { SpeakerInfoComponent } from './speaker-info/speaker-info.component';
 import { SpeakerSessionsComponent } from './speaker-sessions/speaker-sessions.component';
 import { SpeakerTravelComponent } from './speaker-travel/speaker-travel.component';
 import { SpeakerNotesComponent } from './speaker-notes/speaker-notes.component';
+import { SpeakerSocialComponent } from './speaker-social/speaker-social.component';
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,8 @@ import { SpeakerNotesComponent } from './speaker-notes/speaker-notes.component';
 		SpeakerInfoComponent,
 		SpeakerSessionsComponent,
 		SpeakerTravelComponent,
-		SpeakerNotesComponent
+		SpeakerNotesComponent,
+		SpeakerSocialComponent
 	],
 	imports: [
 		BrowserModule,

@@ -5,6 +5,7 @@ export class SpeakerProfile {
 	workshops: SpeakerSession[];
 	notes: SpeakerNotes;
 	travel: SpeakerTravel;
+	social: SpeakerSocial[];
 
 	constructor() {
 		this.info = new SpeakerInfo();
@@ -12,6 +13,7 @@ export class SpeakerProfile {
 		this.workshops = [];
 		this.notes = new SpeakerNotes();
 		this.travel = new SpeakerTravel();
+		this.social = [];
 	}
 }
 
@@ -24,6 +26,10 @@ export class SpeakerInfo {
 	city: string;
 	company: string;
 	jobTitle: string;
+}
+
+export class SpeakerSocial {
+	link: string;
 }
 
 export class SpeakerSession {
