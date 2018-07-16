@@ -26,6 +26,8 @@ export class SpeakerInfo {
 	city: string;
 	company: string;
 	jobTitle: string;
+	bio: string;
+	photo: string;
 }
 
 export class SpeakerSocial {
