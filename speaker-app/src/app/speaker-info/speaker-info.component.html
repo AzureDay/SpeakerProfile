@@ -1,0 +1,42 @@
+<mat-card>
+
+	<mat-card-header>
+		<h3>Profile</h3>
+	</mat-card-header>
+
+	<mat-card-content>
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.firstName" type="text" placeholder="First name">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.lastName" type="text" placeholder="Last name">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.email" type="email" placeholder="Email">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.phone" type="tel" placeholder="Phone">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.country" type="text" placeholder="Country">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.city" type="text" placeholder="City">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.company" type="text" placeholder="Company">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<input matInput [(ngModel)]="speakerInfo.jobTitle" type="text" placeholder="Job title">
+		</mat-form-field>
+	</mat-card-content>
+</mat-card>
+
+
