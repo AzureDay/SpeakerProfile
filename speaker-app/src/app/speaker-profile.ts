@@ -1,5 +1,4 @@
 export class SpeakerProfile {
-	id: string;
 	info: SpeakerInfo;
 	sessions: SpeakerSession[];
 	workshops: SpeakerSession[];
