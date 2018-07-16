@@ -14,6 +14,10 @@ export class SpeakerSessionsComponent implements OnInit {
 
   	constructor() { }
 
+  	addSession(): void {
+  		this.speakerSessions.push(new SpeakerSession());
+	}
+
 	ngOnInit() {
 	}
 

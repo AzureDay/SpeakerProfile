@@ -1,18 +1,45 @@
-<div>
-	<div *ngFor="let session of speakerSessions">
-		{{ session.title }}
-	</div>
-</div>
-
-
 <mat-card>
-
 	<mat-card-header>
 		<h3>{{ title }}</h3>
 	</mat-card-header>
 
 	<mat-card-content>
+		<div *ngFor="let session of speakerSessions">
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="session.title" type="text" placeholder="Title">
+			</mat-form-field>
 
+			<mat-form-field>
+				<mat-select [(value)]="session.language" placeholder="Language">
+					<mat-option value="English">English</mat-option>
+					<mat-option value="Russian">Russian</mat-option>
+					<mat-option value="Ukrainian">Ukrainian</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<textarea matInput
+						  cdkTextareaAutosize
+						  #autosize="cdkTextareaAutosize"
+						  cdkAutosizeMinRows="4"
+						  cdkAutosizeMaxRows="8"
+						  [(ngModel)]="session.abstract"
+						  placeholder="Abstract"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-select [(value)]="session.level" placeholder="Level">
+					<mat-option value="Beginner">Beginner</mat-option>
+					<mat-option value="Advanced">Advanced</mat-option>
+					<mat-option value="Expert">Expert</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-divider></mat-divider>
+		</div>
 	</mat-card-content>
 
+	<mat-card-actions>
+		<button mat-raised-button (click)="addSession()">Add</button>
+	</mat-card-actions>
 </mat-card>
