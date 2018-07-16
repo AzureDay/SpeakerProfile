@@ -9,8 +9,6 @@ import {SpeakerProfile} from "./speaker-profile";
 })
 
 export class AppComponent {
-  	title = 'Speaker Profile';
-
   	speakerProfile: SpeakerProfile;
 
 	constructor() {

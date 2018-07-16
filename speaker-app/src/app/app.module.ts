@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MatInputModule, MatCardModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatDividerModule, MatSelectModule } from '@angular/material';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +27,11 @@ import { SpeakerSocialComponent } from './speaker-social/speaker-social.componen
 		FormsModule,
 		BrowserAnimationsModule,
 		MatInputModule,
-		MatCardModule
+		MatCardModule,
+		MatButtonModule,
+		MatToolbarModule,
+		MatDividerModule,
+		MatSelectModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

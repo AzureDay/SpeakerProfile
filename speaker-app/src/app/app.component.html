@@ -1,17 +1,20 @@
-<div style="text-align:center">
-	<h1>{{ title }}</h1>
-</div>
+<mat-toolbar color="primary">
+	<span>AzureDay Speaker Profile</span>
+</mat-toolbar>
 
-<div>
-	<app-speaker-info [speakerInfo]="speakerProfile.info"></app-speaker-info>
+<app-speaker-info [speakerInfo]="speakerProfile.info"></app-speaker-info>
 
 <app-speaker-social [speakerSocial]="speakerProfile.social"></app-speaker-social>
 
-	<app-speaker-travel [speakerTravel]="speakerProfile.travel"></app-speaker-travel>
+<app-speaker-travel [speakerTravel]="speakerProfile.travel"></app-speaker-travel>
 
-	<app-speaker-sessions [title]="'Sessions'" [speakerSessions]="speakerProfile.sessions"></app-speaker-sessions>
+<app-speaker-sessions [title]="'Sessions'" [speakerSessions]="speakerProfile.sessions"></app-speaker-sessions>
 
-	<app-speaker-sessions [title]="'Workshops'" [speakerSessions]="speakerProfile.workshops"></app-speaker-sessions>
+<app-speaker-sessions [title]="'Workshops'" [speakerSessions]="speakerProfile.workshops"></app-speaker-sessions>
 
-	<app-speaker-notes [speakerNotes]="speakerProfile.notes"></app-speaker-notes>
+<app-speaker-notes [speakerNotes]="speakerProfile.notes"></app-speaker-notes>
+
+<div>
+	<button mat-raised-button color="primary" (click)="saveProfile()">Save</button>
 </div>
+
