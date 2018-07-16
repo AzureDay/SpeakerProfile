@@ -15,6 +15,10 @@ export class AppComponent {
 		this.speakerProfile = new SpeakerProfile();
 	}
 
+	saveProfile(): void {
+		console.log(this.speakerProfile);
+	}
+
 	ngOnInit() {
 	}
 }
