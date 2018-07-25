@@ -10,6 +10,7 @@ import {SpeakerSession} from "../speaker-profile";
 export class SpeakerSessionsComponent implements OnInit {
 
 	@Input() title: string;
+
 	@Input() speakerSessions: SpeakerSession[];
 
   	constructor() { }

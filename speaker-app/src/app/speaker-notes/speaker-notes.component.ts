@@ -9,11 +9,12 @@ import { SpeakerNotes } from "../speaker-profile";
 })
 export class SpeakerNotesComponent implements OnInit {
 
+	@Input() title: string;
+
 	@Input() speakerNotes: SpeakerNotes;
 
 	constructor() { }
 
 	ngOnInit() {
 	}
-
 }

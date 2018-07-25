@@ -9,6 +9,8 @@ import {SpeakerTravel} from "../speaker-profile";
 })
 export class SpeakerTravelComponent implements OnInit {
 
+	@Input() title: string;
+
 	@Input() speakerTravel: SpeakerTravel;
 
 	constructor() { }

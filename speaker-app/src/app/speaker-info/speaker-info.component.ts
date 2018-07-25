@@ -9,6 +9,8 @@ import { SpeakerInfo } from "../speaker-profile";
 })
 export class SpeakerInfoComponent implements OnInit {
 
+	@Input() title: string;
+
 	@Input() speakerInfo: SpeakerInfo;
 
   	constructor() { }

@@ -10,6 +10,8 @@ import { SpeakerSocial } from "../speaker-profile";
 
 export class SpeakerSocialComponent implements OnInit {
 
+	@Input() title: string;
+
 	@Input() speakerSocial: SpeakerSocial[];
 
 	constructor() { }
