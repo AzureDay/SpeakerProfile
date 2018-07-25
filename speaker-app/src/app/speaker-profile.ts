@@ -38,6 +38,23 @@ export class SpeakerSession {
 	abstract: string;
 	language: string;
 	level: string;
+
+	constructor() {
+		this.level = "Beginner";
+	}
+
+	getLevelDefinition(): string {
+		switch (this.level) {
+			case "Beginner":
+				return "Assumes little or no expertise with topic and covers topic concepts, functions, features, and benefits. Provides specific details about the topic.";
+			case "Advanced":
+				return "Assumes in-depth understanding of features in a real-world environment, and strong coding skills. Provides a detailed technical overview of a subset of product/technology features, covering architecture, performance, migration, deployment, and development.";
+			case "Expert":
+				return "Expert material. Assumes a deep level of technical knowledge and experience and a detailed, thorough understanding of topic. Provides expert-to-expert interaction and coverage of specialized topics.";
+			default:
+				return "";
+		}
+	}
 }
 
 export class SpeakerNotes {
