@@ -71,5 +71,6 @@ export class SpeakerTravel {
 
 	constructor() {
 		this.travel = "none";
+		this.accommodation = "none";
 	}
 }
