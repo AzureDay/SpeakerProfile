@@ -6,6 +6,48 @@
 
 	<mat-card-content>
 
+		<mat-form-field class="full-width">
+			<mat-select [(value)]="speakerTravel.travel" placeholder="You will travel to Kyiv by...">
+				<mat-option value="none">None, I`m already here</mat-option>
+				<mat-option value="air">Airplane, I would like to experience the miracle of flying</mat-option>
+				<mat-option value="train">Railroad, because traveling by train is more fun</mat-option>
+				<mat-option value="car">My own car, because there are no reasons not to do so</mat-option>
+				<mat-option value="transporter">Scotty will beam me up, but I still need accommodation</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<div *ngIf="speakerTravel.travel !== 'none'">
+
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="speakerTravel.arrivalAt" [matDatepicker]="picker1" placeholder="Arrival at">
+				<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+				<mat-datepicker touchUi #picker1></mat-datepicker>
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="speakerTravel.arrivalInfo" placeholder="Arrival additional info (flight number, train number, etc.)">
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="speakerTravel.departureAt" [matDatepicker]="picker2" placeholder="Departure at">
+				<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+				<mat-datepicker touchUi #picker2></mat-datepicker>
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<input matInput [(ngModel)]="speakerTravel.departureInfo" placeholder="Departure additional info (flight number, train number, etc.)">
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<mat-select [(value)]="speakerTravel.accommodation" placeholder="Accommodation">
+					<mat-option value="none">None, I have it covered already</mat-option>
+					<mat-option value="single">I would like to have some extra comfort in a single room</mat-option>
+					<mat-option value="twin">I do care about conference budget and I can share twin room with another speaker</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+		</div>
+
 	</mat-card-content>
 
 </mat-card>

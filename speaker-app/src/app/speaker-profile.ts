@@ -46,7 +46,13 @@ export class SpeakerNotes {
 
 export class SpeakerTravel {
 	travel: string;
-	arrival: string;
-	departure: string;
+	arrivalAt: string;
+	arrivalInfo: string;
+	departureAt: string;
+	departureInfo: string;
 	accommodation: string;
+
+	constructor() {
+		this.travel = "none";
+	}
 }

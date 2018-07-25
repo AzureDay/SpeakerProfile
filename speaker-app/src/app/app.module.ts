@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatDividerModule, MatSelectModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatDividerModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +31,9 @@ import { SpeakerSocialComponent } from './speaker-social/speaker-social.componen
 		MatButtonModule,
 		MatToolbarModule,
 		MatDividerModule,
-		MatSelectModule
+		MatSelectModule,
+		MatDatepickerModule,
+		MatNativeDateModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
