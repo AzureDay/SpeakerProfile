@@ -4,6 +4,8 @@
 	</mat-card-header>
 
 	<mat-card-content>
+		<p>Please provide all the social links for either you or your community that you like us to publish on our official website. It can be Facebook, Twitter, LinkedIn, GitHub, MVP or any other profile. It can be your own blog or website. It will help to show to all of the attendees how awesome you are. It will also helm them to reach you after the conference.</p>
+
 		<div *ngFor="let social of speakerSocial">
 			<mat-form-field class="full-width">
 				<input matInput [(ngModel)]="social.link" type="text" placeholder="Link">
