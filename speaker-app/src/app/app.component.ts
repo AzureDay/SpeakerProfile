@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import {SpeakerProfile} from "./speaker-profile";
+import { SpeakerProfile } from "./speaker-profile";
+import { AuthenticationService } from "./authentication.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,23 @@ import {SpeakerProfile} from "./speaker-profile";
 })
 
 export class AppComponent {
-  	speakerProfile: SpeakerProfile;
+  	public speakerProfile: SpeakerProfile;
 
-	constructor() {
+	constructor(private auth: AuthenticationService) {
 		this.speakerProfile = new SpeakerProfile();
+	}
+
+	public isAuthenticated() {
+		this.auth.checkAuthentication();
+		return this.auth.isAuthenticated;
+	}
+
+	public login() {
+		this.auth.login();
+	}
+
+	public logout() {
+		this.auth.logout();
 	}
 
 	saveProfile(): void {
@@ -20,5 +34,6 @@ export class AppComponent {
 	}
 
 	ngOnInit() {
+		this.auth.checkAuthentication();
 	}
 }
