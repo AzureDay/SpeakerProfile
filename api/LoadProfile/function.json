@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [ "get" ],
+      "route": "profile/{year:int}/{id}",
+      "authLevel": "anonymous"
+    },
+    {
+      "name": "speakerProfile",
+      "type": "blob",
+      "path": "profiles/{year}/{id}",
+      "connection": "ProfileStorage",
+      "direction": "in"
+    },
+    {
+      "name": "res",
+      "type": "http",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
