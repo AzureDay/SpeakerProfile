@@ -8,15 +8,18 @@ import {SpeakerProfile} from "./speaker-profile";
 
 export class SpeakerDataService {
 	static createSpeakerProfile(): void {
-
+		this.saveSpeakerProfile(new SpeakerProfile());
 	};
 
 	static loadSpeakerProfile(): SpeakerProfile {
-		return new SpeakerProfile();
+		let profile = localStorage.getItem("AzureDaySpeakerProfile");
+		return profile ?
+			JSON.parse(profile) :
+			new SpeakerProfile();
 	}
 
 	static saveSpeakerProfile(profile: SpeakerProfile): void {
-
+		localStorage.setItem("AzureDaySpeakerProfile", JSON.stringify(profile));
 	}
 
   	constructor() { }

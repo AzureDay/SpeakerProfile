@@ -33,7 +33,12 @@ export class AppComponent {
 		console.log(this.speakerProfile);
 	}
 
+	loadProfile(): void {
+	}
+
 	ngOnInit() {
-		this.auth.checkAuthentication();
+		if (this.isAuthenticated()) {
+			this.auth.loadGraphProfile();
+		}
 	}
 }

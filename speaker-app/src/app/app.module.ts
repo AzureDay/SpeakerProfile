@@ -5,6 +5,10 @@ import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatDi
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { RouterModule } from '@angular/router';
+
+import { MsalModule, MsalInterceptor } from "@azure/msal-angular";
 
 import { AppComponent } from './app.component';
 import { SpeakerInfoComponent } from './speaker-info/speaker-info.component';
@@ -12,6 +16,9 @@ import { SpeakerSessionsComponent } from './speaker-sessions/speaker-sessions.co
 import { SpeakerTravelComponent } from './speaker-travel/speaker-travel.component';
 import { SpeakerNotesComponent } from './speaker-notes/speaker-notes.component';
 import { SpeakerSocialComponent } from './speaker-social/speaker-social.component';
+
+import { ConfigService } from "./config.service";
+import { appRoutes } from './app.routes';
 
 @NgModule({
 	declarations: [
@@ -24,6 +31,7 @@ import { SpeakerSocialComponent } from './speaker-social/speaker-social.componen
 	],
 	imports: [
 		BrowserModule,
+		HttpClientModule,
 		FormsModule,
 		BrowserAnimationsModule,
 		MatInputModule,
@@ -33,9 +41,23 @@ import { SpeakerSocialComponent } from './speaker-social/speaker-social.componen
 		MatDividerModule,
 		MatSelectModule,
 		MatDatepickerModule,
-		MatNativeDateModule
+		MatNativeDateModule,
+		RouterModule.forRoot(appRoutes),
+		MsalModule.forRoot({
+			clientID: ConfigService.AzureAD.clientID,
+			authority: ConfigService.AzureAD.authority,
+			redirectUri: ConfigService.AzureAD.redirectUrl,
+			consentScopes: ConfigService.AzureAD.b2cScopes
+		})
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: MsalInterceptor,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
+
 export class AppModule { }
