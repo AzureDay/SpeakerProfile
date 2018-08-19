@@ -51,12 +51,8 @@ export class AuthenticationService {
 		// }
 	}
 
-	public checkAuthentication() {
-		if (this.authService.getUser()) {
-			this.isAuthenticated = true;
-		} else {
-			this.isAuthenticated = false;
-		}
+	public checkAuthentication(): void {
+		this.isAuthenticated = !!this.authService.getUser();
 	}
 
 	public login() {
