@@ -1,28 +1,4 @@
-<mat-toolbar color="primary">
-	<div class="button-row">
-		<button *ngIf="!isAuthenticated()" mat-raised-button (click)="login()">Login</button>
-		<button *ngIf="isAuthenticated()" mat-raised-button color="warn" (click)="logout()">Logout</button>
-	</div>
 
-	<span class="example-fill-remaining-space"></span>
 
-	<span>AzureDay Speaker Profile</span>
-</mat-toolbar>
 
-<div *ngIf="isAuthenticated()">
-	<app-speaker-info [title]="'Profile'" [speakerInfo]="speakerProfile.info"></app-speaker-info>
-
-	<app-speaker-social [title]="'Social'" [speakerSocial]="speakerProfile.social"></app-speaker-social>
-
-	<app-speaker-travel [title]="'Travel'" [speakerTravel]="speakerProfile.travel"></app-speaker-travel>
-
-	<app-speaker-sessions id="sessions" [title]="'Sessions'" [speakerSessions]="speakerProfile.sessions"></app-speaker-sessions>
-
-	<app-speaker-sessions id="workshops" [title]="'Workshops'" [speakerSessions]="speakerProfile.workshops"></app-speaker-sessions>
-
-	<app-speaker-notes [title]="'Additional notes'" [speakerNotes]="speakerProfile.notes"></app-speaker-notes>
-
-	<div>
-		<button mat-raised-button color="primary" (click)="saveProfile()">Save</button>
-	</div>
-</div>
+<router-outlet></router-outlet>
